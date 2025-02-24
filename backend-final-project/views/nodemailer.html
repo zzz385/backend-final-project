@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отправка почты</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/index.html">⬅ На главную</a>
+    </nav>
+
+    <div class="mail-container">
+        <h1>📩 Отправить письмо</h1>
+
+        <div class="mail-form">
+            <label>Кому (email):</label>
+            <input type="email" id="to" placeholder="example@email.com" required>
+
+            <label>Тема письма:</label>
+            <input type="text" id="subject" placeholder="Введите тему" required>
+
+            <label>Сообщение:</label>
+            <textarea id="message" placeholder="Введите сообщение" required></textarea>
+
+            <button onclick="sendEmail()">Отправить</button>
+        </div>
+
+        <div id="mailResult" class="mail-result"></div>
+    </div>
+
+    <script src="/nodemailer.js"></script>
+</body>
+</html>

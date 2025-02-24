@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Web App</h1>
+        <ul>
+            <li><a href="/bmi.html">Калькулятор ИМТ</a></li>
+            <li><a href="/weather.html">Погода</a></li>
+            <li><a href="/blog.html">Блог</a></li>
+            <li><a href="/nodemailer.html">Отправка почты</a></li>
+            <li><a href="/qrcode.html">QR-код генератор</a></li>
+        </ul>
+        <div id="auth-buttons">
+            <a href="/login.html" id="loginBtn">Войти</a>
+            <a href="/register.html" id="registerBtn">Регистрация</a>
+            <button id="logoutBtn" style="display: none;">Выйти</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 id="welcomeText">👋 Добро пожаловать!</h2>
+        <p>Выберите раздел:</p>
+        <ul class="menu">
+            <li><a href="/bmi.html">📏 Калькулятор ИМТ</a></li>
+            <li><a href="/weather.html">🌦 Погода</a></li>
+            <li><a href="/blog.html">✍ Блог</a></li>
+            <li><a href="/nodemailer.html">📧 Отправка почты</a></li>
+            <li><a href="/qrcode.html">📲 Генератор QR-кода</a></li>
+        </ul>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

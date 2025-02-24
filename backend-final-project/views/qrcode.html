@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор QR-кода</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/index.html">⬅ На главную</a>
+    </nav>
+
+    <div class="qrcode-container">
+        <h1>📲 Генератор QR-кода</h1>
+
+        <div class="qrcode-form">
+            <label>Введите ссылку:</label>
+            <input type="text" id="url" placeholder="https://example.com">
+            <button onclick="generateQRCode()">Создать QR-код</button>
+        </div>
+
+        <div id="qrcodeResult" class="qrcode-result"></div>
+        <button id="downloadBtn" style="display: none;" onclick="downloadQRCode()">📥 Скачать QR-код</button>
+    </div>
+
+    <script src="/qrcode.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор ИМТ</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/index.html">⬅ На главную</a>
+    </nav>
+
+    <div class="bmi-container">
+        <h1>📊 Калькулятор ИМТ</h1>
+
+        <div class="bmi-form">
+            <label>Вес (кг):</label>
+            <input type="number" id="weight" placeholder="Введите вес" required>
+
+            <label>Рост (м или см):</label>
+            <input type="number" id="height" placeholder="Введите рост" required>
+
+            <button onclick="calculateBMI()">Рассчитать</button>
+        </div>
+
+        <div id="bmiResult" class="bmi-result"></div>
+    </div>
+
+    <script src="/bmi.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/index.html">⬅ На главную</a>
+    </nav>
+
+    <div class="blog-container">
+        <h1>📝 Блог</h1>
+
+        <form id="blogForm">
+            <input type="text" id="title" placeholder="Заголовок" required>
+            <textarea id="content" placeholder="Содержание" required></textarea>
+            <button type="submit">Создать пост</button>
+        </form>
+
+        <h2>Все посты:</h2>
+        <div id="blogList"></div>
+    </div>
+
+    <script src="/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз погоды</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <nav>
+        <a href="/index.html">⬅ На главную</a>
+    </nav>
+
+    <div class="weather-container">
+        <h1>🌤 Погода</h1>
+
+        <div class="weather-form">
+            <label>Введите город:</label>
+            <input type="text" id="city" placeholder="Например, Алматы">
+            <button onclick="getWeather()">Показать погоду</button>
+        </div>
+
+        <h2>Текущая погода</h2>
+        <div id="weatherResult"></div>
+
+        <h2>Карта</h2>
+        <div id="map" style="height: 300px;"></div>
+
+
+        <h2>Прогноз на 3 дня</h2>
+        <button onclick="getForecast()">Показать прогноз</button>
+        <div id="forecastResult"></div>
+
+        <h2>Качество воздуха</h2>
+        <button onclick="getAirQuality()">Показать качество воздуха</button>
+        <div id="airQualityResult"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/weather.js"></script>
+</body>
+</html>
