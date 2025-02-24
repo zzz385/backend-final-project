@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// 📌 Рассчитать ИМТ (POST)
 router.post("/", (req, res) => {
     try {
         const { weight, height } = req.body;
@@ -9,7 +8,6 @@ router.post("/", (req, res) => {
             return res.status(400).json({ message: "Введите вес и рост" });
         }
 
-        // Проверяем, если рост передан в сантиметрах (например, 175)
         const heightInMeters = height > 3 ? height / 100 : height;
 
         const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
@@ -26,7 +24,6 @@ router.post("/", (req, res) => {
     }
 });
 
-// 📌 Тестовый GET-запрос (чтобы проверить доступность)
 router.get("/", (req, res) => {
     res.json({ message: "BMI API работает! Используйте POST /bmi" });
 });

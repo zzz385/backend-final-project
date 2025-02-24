@@ -2,7 +2,6 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 
-// 📌 Текущая погода
 router.get("/", async (req, res) => {
     const { city } = req.query;
     if (!city) return res.status(400).json({ error: "Введите название города!" });
@@ -26,7 +25,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-// 📌 Прогноз погоды на 3 дня
 router.get("/forecast", async (req, res) => {
     const { city } = req.query;
     if (!city) return res.status(400).json({ error: "Введите название города!" });
@@ -45,7 +43,6 @@ router.get("/forecast", async (req, res) => {
     }
 });
 
-// 📌 Получение координат города (для карты)
 async function getCoordinates(city) {
     try {
         const response = await axios.get(`https://nominatim.openstreetmap.org/search?q=${city}&format=json&limit=1`);
@@ -61,7 +58,6 @@ async function getCoordinates(city) {
     }
 }
 
-// 📌 Качество воздуха
 router.get("/airquality", async (req, res) => {
     const { city } = req.query;
     if (!city) return res.status(400).json({ error: "Введите название города!" });

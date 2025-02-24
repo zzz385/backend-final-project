@@ -2,16 +2,14 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const router = express.Router();
 
-// 📌 Настройки почты (Gmail SMTP)
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: process.env.EMAIL_USER, // 📌 Должно быть в .env
-        pass: process.env.EMAIL_PASS  // 📌 Должно быть в .env
+        user: process.env.EMAIL_USER, 
+        pass: process.env.EMAIL_PASS  
     }
 });
 
-// 📌 Отправка письма
 router.post("/", async (req, res) => {
     try {
         const { to, subject, message } = req.body;
@@ -23,7 +21,7 @@ router.post("/", async (req, res) => {
             from: process.env.EMAIL_USER,
             to,
             subject,
-            html: `<p>${message}</p>` // 📌 Можно отправлять HTML
+            html: `<p>${message}</p>` 
         });
 
         res.json({ message: "Письмо отправлено!" });

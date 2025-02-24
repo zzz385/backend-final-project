@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const registerBtn = document.getElementById("registerBtn");
     const welcomeText = document.getElementById("welcomeText");
 
-    // Проверяем, вошёл ли пользователь
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
 
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         registerBtn.style.display = "inline-block";
     }
 
-    // Функция выхода
     logoutBtn.addEventListener("click", () => {
         localStorage.removeItem("token");
         localStorage.removeItem("username");

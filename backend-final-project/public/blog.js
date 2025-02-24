@@ -3,14 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const blogList = document.getElementById("blogList");
     const token = localStorage.getItem("token");
     console.log("📢 Токен, который отправляем:", token);
-    const username = localStorage.getItem("username"); // 📌 Текущий пользователь
+    const username = localStorage.getItem("username"); 
 
     if (!token) {
         alert("Вы не вошли в систему!");
         window.location.href = "/login.html";
     }
 
-    // 📌 Создание поста
     blogForm.addEventListener("submit", async (e) => {
         e.preventDefault();
         const title = document.getElementById("title").value;
@@ -35,14 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 📌 Загрузка постов
     async function loadPosts() {
         const res = await fetch("/blog");
         const posts = await res.json();
 
         blogList.innerHTML = "";
         posts.forEach((post) => {
-            const isOwner = post.author === username; // 📌 Проверяем, владелец ли пользователь
+            const isOwner = post.author === username; 
 
             const postElement = document.createElement("div");
             postElement.classList.add("blog-post");
@@ -63,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 📌 Редактирование поста
     window.editPost = async (postId, title, content) => {
         const newTitle = prompt("Измените заголовок", title);
         const newContent = prompt("Измените содержание", content);
@@ -86,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // 📌 Удаление поста
     window.deletePost = async (postId) => {
         if (!confirm("Удалить этот пост?")) return;
 

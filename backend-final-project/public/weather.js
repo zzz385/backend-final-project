@@ -83,12 +83,10 @@ function updateMap(lat, lon) {
         map.setView([lat, lon], 10);
     }
 
-    // 📌 Удаляем старый маркер (если есть)
     if (map.marker) {
         map.removeLayer(map.marker);
     }
 
-    // 📌 Добавляем новый маркер
     map.marker = L.marker([lat, lon]).addTo(map)
         .bindPopup("Расположение города")
         .openPopup();

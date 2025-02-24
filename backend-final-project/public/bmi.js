@@ -7,7 +7,6 @@ function calculateBMI() {
         return;
     }
 
-    // 📌 Если рост в сантиметрах, переводим в метры
     if (height > 3) {
         height = height / 100;
     }

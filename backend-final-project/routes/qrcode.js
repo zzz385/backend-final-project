@@ -2,7 +2,6 @@ const express = require("express");
 const QRCode = require("qrcode");
 const router = express.Router();
 
-// 📌 Генерация QR-кода
 router.get("/", async (req, res) => {
     const { url } = req.query;
     if (!url) return res.status(400).json({ error: "Введите ссылку!" });

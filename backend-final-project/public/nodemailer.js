@@ -9,7 +9,7 @@ async function sendEmail() {
     }
 
     try {
-        const res = await fetch("/nodemailer", { // 📌 Отправляем запрос на сервер
+        const res = await fetch("/nodemailer", { 
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -3,7 +3,6 @@ const authMiddleware = require("../middleware/auth");
 const Blog = require("../models/Blog");
 const router = express.Router();
 
-// 📌 Создать пост (автор = текущий пользователь)
 router.post("/", authMiddleware, async (req, res) => {
     try {
         const { title, content } = req.body;
@@ -14,7 +13,7 @@ router.post("/", authMiddleware, async (req, res) => {
         const post = new Blog({
             title,
             content,
-            author: req.user.username, // 📌 Берём имя из базы MongoDB
+            author: req.user.username, 
             createdAt: new Date(),
         });
 
@@ -25,7 +24,6 @@ router.post("/", authMiddleware, async (req, res) => {
     }
 });
 
-// 📌 Получить все посты
 router.get("/", async (req, res) => {
     try {
         const posts = await Blog.find().sort({ createdAt: -1 });
@@ -35,7 +33,6 @@ router.get("/", async (req, res) => {
     }
 });
 
-// 📌 Обновить пост (только если автор совпадает)
 router.put("/:id", authMiddleware, async (req, res) => {
     try {
         const { title, content } = req.body;
@@ -59,7 +56,6 @@ router.put("/:id", authMiddleware, async (req, res) => {
     }
 });
 
-// 📌 Удалить пост (только если автор совпадает)
 router.delete("/:id", authMiddleware, async (req, res) => {
     try {
         const post = await Blog.findById(req.params.id);
